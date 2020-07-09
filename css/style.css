@@ -10,3 +10,60 @@
     --c-light-grey: #F7F7F7;
     --c-white: #ffffff;
 }
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--open-sans);
+    margin: 0;
+}
+
+.container {
+    width: 1352px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.page-header {
+    height: 70px;
+    box-shadow: 0 3px 6px #00000029;
+
+}
+.page-header-container {
+    height: inherit;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.page-logo {
+    text-decoration: none;
+    color: var(--c-primary);
+    font-size: 32px;
+    font-family: var(--raleway);
+    font-weight: 300;
+}
+.page-menu {
+    height: 100%;
+}
+.page-menu__list {
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+}
+.page-menu__list-el {
+    height: 100%;
+    padding: 0 40px;
+}
+.page-menu__list-link {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--c-grey);
+    font-size: 11px;
+    font-weight: 700;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}

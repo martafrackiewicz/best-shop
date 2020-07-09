@@ -1,6 +1,6 @@
 :root {
-    --open-sans: 'Open Sans', sans-serif;
-    --raleway: 'Raleway', sans-serif;
+    --font-primary: 'Open Sans', sans-serif;
+    --font-secondary: 'Raleway', sans-serif;
     --c-primary: #08A6E4;
     --c-primary-shadow: rgba(7, 172, 230, .16);
     --c-redish: #FB3B64;
@@ -16,7 +16,7 @@
 }
 
 body {
-    font-family: var(--open-sans);
+    font-family: var(--font-primary);
     margin: 0;
 }
 
@@ -42,7 +42,7 @@ body {
     text-decoration: none;
     color: var(--c-primary);
     font-size: 32px;
-    font-family: var(--raleway);
+    font-family: var(--font-secondary);
     font-weight: 300;
 }
 .page-menu {

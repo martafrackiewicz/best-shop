@@ -129,33 +129,18 @@ body {
 }
 .statistics-section__col::before {
     content: "";
-    display: flex;
-    width: 60px;
-    height: 60px;
+    width: 55px;
+    height: 55px;
     border-radius: 50%;
     background-color: var(--c-redish);
     position: absolute;
     top: 0;
 }
 .statistics-section__col:nth-of-type(2)::before {
-    content: "";
-    display: flex;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
     background-color: var(--c-primary);
-    position: absolute;
-    top: 0;
 }
 .statistics-section__col:last-of-type::before {
-    content: "";
-    display: flex;
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
     background-color: var(--c-green);
-    position: absolute;
-    top: 0;
 }
 .statistics-section__img {
     height: 44px;

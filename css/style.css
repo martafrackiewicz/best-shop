@@ -101,3 +101,74 @@ body {
 .open-section__img {
     width: 100vw;
 }
+
+.statistics-section {}
+.statistics-section__title {
+    font-family: var(--font-secondary);
+    font-size: 36px;
+    text-align: center;
+}
+.statistics-section__row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px;
+}
+.statistics-section__col {
+    padding: 70px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    max-height: 168px;
+    position: relative;
+}
+.statistics-section__col::before {
+    content: "";
+    display: flex;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--c-redish);
+    position: absolute;
+    top: 0;
+}
+.statistics-section__col:nth-of-type(2)::before {
+    content: "";
+    display: flex;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--c-primary);
+    position: absolute;
+    top: 0;
+}
+.statistics-section__col:last-of-type::before {
+    content: "";
+    display: flex;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background-color: var(--c-green);
+    position: absolute;
+    top: 0;
+}
+.statistics-section__img {
+    height: 44px;
+    /*width: 52px;*/
+    z-index: 9999;
+    position: relative;
+    left: 20px;
+}
+.statistics-section__number {
+    font-family: var(--font-secondary);
+    font-size: 20px;
+    letter-spacing: 6px;
+    font-weight: 800;
+    margin-top: 20px;
+}
+.statistics-section__text {
+    color: var(--c-grey);
+    font-size: 17px;
+    margin: 30px;
+}

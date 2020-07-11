@@ -9,6 +9,7 @@
     --c-navy: #13253B;
     --c-grey: #A5A5A5;
     --c-light-grey: #F7F7F7;
+    --c-dark-grey: #707070;
     --c-white: #ffffff;
 }
 
@@ -313,4 +314,113 @@ body {
 }
 .price-box--last .price-box__btn{
     background-color: var(--c-green);
+}
+
+.contact-section {}
+.contact-section-container {
+    max-width: 900px;
+    margin-top: 150px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact-section__description {}
+.description-title {
+    font-family: var(--font-secondary);
+    font-size: 39px;
+}
+.description-text {
+    font-size: 16px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+.description-data {
+    display: inline;
+    width: 50%;
+}
+.description-data__email, .description-data__phone {
+    color: var(--c-grey);
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+}
+.description-data__email::before {
+    content: "";
+    background-image: url("../assets/Mail Icon.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+    width: 27px;
+    height: 27px;
+    padding-left: 10px;
+}
+.description-data__phone::before {
+    content: "";
+    background-image: url("../assets/Phone Icon.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+    width: 27px;
+    height: 27px;
+    padding-left: 10px;
+}
+
+.contact-section__form {
+    width: 50%;
+}
+.form-row {
+    margin-bottom: 20px;
+}
+.form-label{
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--c-primary);
+    text-transform: uppercase;
+}
+.form-control {
+    height: 30px;
+    width: 100%;
+    padding: 0 10px;
+    border: none;
+    border-bottom: 1px solid #95989A;
+}
+.form-checkbox {
+    display: flex;
+}
+.form-checkbox__input {
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    border: 1px solid #95989A;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    margin-right: 8px;
+    flex-shrink: 0;
+}
+.form-checkbox__input:checked {
+    background-image: url("../assets/Checkmark.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.form-checkbox__label {
+    color: var(--c-dark-grey);
+    font-size: 12px;
+}
+
+.form-row--last {
+    text-align: right;
+}
+.form-btn {
+    background-color: var(--c-primary);
+    border-radius: 35px;
+    border: none;
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--c-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 100px;
 }

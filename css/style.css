@@ -161,3 +161,37 @@ body {
     font-size: 17px;
     margin: 30px;
 }
+
+.benefits-section {
+    background-color: var(--c-light-grey);
+}
+.benefits-section-container {
+    padding-top: 105px;
+    padding-bottom: 105px;
+}
+.benefits-section__box {
+    height: 370px;
+    background-color: var(--c-white);
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5px;
+    margin: 40px 0;
+}
+.box-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 35px;
+}
+.box-title {
+    font-family: var(--font-secondary);
+    font-size: 36px;
+    padding-bottom: 30px;
+}
+.box-text {
+    font-size: 16px;
+    padding-bottom: 50px;
+    line-height: 1.3em;
+}
+.box-img {
+}

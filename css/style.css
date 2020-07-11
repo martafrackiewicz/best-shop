@@ -320,6 +320,7 @@ body {
 .contact-section-container {
     max-width: 900px;
     margin-top: 150px;
+    margin-bottom: 50px;
     display: flex;
     justify-content: space-between;
 }
@@ -424,3 +425,30 @@ body {
     justify-content: center;
     padding: 20px 100px;
 }
+
+.page-footer {
+    box-shadow: 0 -5px 40px #00000029;
+}
+.page-footer-container {
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-content {}
+.footer-content__logo {
+    font-size: 26px;
+}
+.footer-content__copyright {
+    font-size: 11px;
+    color: var(--c-grey);
+}
+
+.footer-socialmedia {}
+.socialmedia-logo {
+    width: 24px;
+    height: 24px;
+    padding: 10px;
+}
+

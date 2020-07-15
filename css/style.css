@@ -227,11 +227,11 @@ body {
 }
 .box-picture-first {
     height: 300px;
-    background-image: url("../assets/Macbook.png");
+    background-image: url("../assets/macbook.png");
 }
 .box-picture-second {
     height: 330px;
-    background-image: url("../assets/iPhone.png");
+    background-image: url("../assets/iphone.png");
 }
 .box-square {
     width: 180px;
@@ -277,7 +277,7 @@ body {
 .box-second-img {
     width: 300px;
     height: 200px;
-    background-image: url("../assets/Trumpet.png");
+    background-image: url("../assets/trumpet.png");
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -359,7 +359,7 @@ body {
 }
 .price-box__list-el::before {
     content: '';
-    background-image: url("../assets/Ckechmark-1.svg");
+    background-image: url("../assets/checkmark-2.svg");
     background-repeat: no-repeat;
     background-size: contain;
     border-radius: 2px;
@@ -371,7 +371,7 @@ body {
 .price-box__list-el--not {}
 .price-box__list-el--not::before {
     content: '';
-    background-image: url("../assets/Close.svg");
+    background-image: url("../assets/close.svg");
     background-repeat: no-repeat;
     background-size: contain;
     border-radius: 2px;
@@ -434,7 +434,7 @@ body {
 }
 .description-data__email::before {
     content: "";
-    background-image: url("../assets/Mail Icon.svg");
+    background-image: url("../assets/mail_icon.svg");
     background-repeat: no-repeat;
     background-size: contain;
     display: inline-block;
@@ -444,7 +444,7 @@ body {
 }
 .description-data__phone::before {
     content: "";
-    background-image: url("../assets/Phone Icon.svg");
+    background-image: url("../assets/phone_icon.svg");
     background-repeat: no-repeat;
     background-size: contain;
     display: inline-block;
@@ -487,7 +487,7 @@ body {
     flex-shrink: 0;
 }
 .form-checkbox__input:checked {
-    background-image: url("../assets/Checkmark.svg");
+    background-image: url("../assets/checkmark.svg");
     background-position: center;
     background-repeat: no-repeat;
 }

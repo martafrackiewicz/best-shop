@@ -170,7 +170,7 @@ body {
 .benefits-section-container {
     padding-top: 105px;
     padding-bottom: 105px;
-    width: 1100px;
+    width: 1130px;
 }
 .benefits-section__box {
     height: 370px;
@@ -178,25 +178,110 @@ body {
     display: flex;
     justify-content: space-between;
     border-radius: 5px;
-    margin: 40px 0;
+    margin-bottom: 40px;
+}
+.benefits-section__box--left {
+    flex-direction: row-reverse;
 }
 .box-content {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-left: 35px;
+    padding: 70px 35px;
+}
+.box-line {
+    width: 330px;
+    height: 4px;
+}
+.box-line-redish {
+    background-color: var(--c-redish);
+}
+.box-line-blue {
+    background-color: var(--c-primary);
+}
+.box-line-green {
+    background-color: var(--c-green);
 }
 .box-title {
     font-family: var(--font-secondary);
     font-size: 36px;
     padding-bottom: 30px;
+    line-height: 1.15em;
 }
 .box-text {
     font-size: 16px;
     padding-bottom: 50px;
     line-height: 1.3em;
 }
-.box-img {}
+.box-img{
+    position: relative;
+}
+.box-picture {
+    width: 430px;
+    margin: 30px 70px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
+    z-index: 100;
+    position: relative;
+}
+.box-picture-first {
+    height: 300px;
+    background-image: url("../assets/Macbook.png");
+}
+.box-picture-second {
+    height: 330px;
+    background-image: url("../assets/iPhone.png");
+}
+.box-square {
+    width: 180px;
+    height: 180px;
+    background-color: var(--c-redish);
+    border-radius: 41px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-25%, 25%) rotate(45deg);
+    z-index: 2;
+}
+.box-circle {
+    width: 320px;
+    height: 320px;
+    background-color: var(--c-primary);
+    border-radius: 50%;
+    position: absolute;
+    top: 12px;
+    left: 0;
+    transform: translateX(25%);
+    z-index: 2;
+}
+
+.container-box-double {
+    display: flex;
+    justify-content: space-between;
+    height: 370px;
+    margin-bottom: 0;
+}
+.benefits-section__box--double {
+    width: 620px;
+}
+.box-first {}
+.box-second {
+    width: 440px;
+    background-color: var(--c-green);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box-second-img {
+    width: 300px;
+    height: 200px;
+    background-image: url("../assets/Trumpet.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
 
 .prices-section {}
 .prices-section-container {
@@ -304,9 +389,9 @@ body {
     font-size: 13px;
     font-weight: 700;
     padding: 16px 64px;
-    /*position: absolute;*/
-    /*top: 100%;*/
-    /*transform: translateY(-50%);*/
+    position: absolute;
+    top: 100%;
+    transform: translateY(-50%);
 }
 .price-box--first .price-box__btn {
     background-color: var(--c-redish);

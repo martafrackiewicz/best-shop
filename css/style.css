@@ -420,10 +420,11 @@ body {
     background-color: var(--c-green);
 }
 
-.contact-section {}
+.contact-section {
+}
 .contact-section-container {
     max-width: 900px;
-    margin-top: 150px;
+    margin-top: 200px;
     margin-bottom: 50px;
     display: flex;
     justify-content: space-between;
@@ -462,7 +463,7 @@ body {
 .form-row {
     margin-bottom: 20px;
 }
-.form-label{
+.form-label {
     font-size: 11px;
     font-weight: 700;
     color: var(--c-primary);
@@ -470,7 +471,7 @@ body {
     letter-spacing: 3px;
 }
 .form-control {
-    height: 30px;
+    height: 40px;
     width: 100%;
     padding: 0 10px;
     border: none;

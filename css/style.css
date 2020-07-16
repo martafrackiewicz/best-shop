@@ -298,7 +298,6 @@ body {
     margin-bottom: 40px;
 }
 
-
 .prices-section__price-box {
     width: 370px;
     /*height: 460px;*/
@@ -317,6 +316,9 @@ body {
 .price-box--big .price-box__title {
     font-size: 21px;
 }
+.price-box--big .price-box__list-el {
+    margin: 25px 0;
+}
 
 .price-box--first {
     border: 1px solid var(--c-redish);
@@ -332,6 +334,9 @@ body {
     margin-top: 34px;
     margin-bottom: 60px;
     text-align: center;
+}
+.price-box--first .price-box__details {
+    margin-bottom: 90px;
 }
 .price-box__title {
     font-family: var(--font-secondary);

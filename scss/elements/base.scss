@@ -1,0 +1,14 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-primary;
+  margin: 0;
+}
+
+.container {
+  width: 1352px;
+  margin: 0 auto;
+  padding: 0 15px;
+}

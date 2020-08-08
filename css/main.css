@@ -374,12 +374,12 @@ body {
   margin: 0 auto;
   padding: 0 15px;
 }
+
 @media (max-width: 1352px) {
   .container {
     width: 100%;
   }
 }
-
 .benefits-section {
   background-color: #F7F7F7;
 }
@@ -636,7 +636,7 @@ body {
   box-shadow: rgba(7, 172, 230, 0.16);
   border-radius: 40px;
   height: 70px;
-  padding: 20px 160px;
+  width: 310px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -644,8 +644,19 @@ body {
 }
 .open-section__img {
   width: 100%;
+  height: auto;
 }
 
+@media (max-width: 720px) {
+  .open-section__img {
+    width: 220%;
+  }
+  .open-section__text {
+    padding: 0 70px;
+    text-align: center;
+    line-height: 1.3em;
+  }
+}
 .page-footer {
   box-shadow: 0 -5px 40px #00000029;
 }

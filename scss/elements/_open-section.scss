@@ -25,7 +25,7 @@
     box-shadow: $c-primary-shadow;
     border-radius: 40px;
     height: 70px;
-    padding: 20px 160px;
+    width: 310px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -34,5 +34,21 @@
 
   &__img {
     width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 720px) {
+  .open-section {
+    &__img {
+      width: 220%;
+      //transform: translate(-30% 0);
+    }
+
+    &__text {
+      padding: 0 70px;
+      text-align: center;
+      line-height: 1.3em;
+    }
   }
 }

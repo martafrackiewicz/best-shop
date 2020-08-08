@@ -1054,5 +1054,9 @@ body {
     flex-direction: column;
     text-align: center;
   }
+
+  .statistics-section__col {
+    padding-bottom: 20px;
+  }
 }
 /*# sourceMappingURL=main.css.map */

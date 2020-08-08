@@ -1,3 +1,10 @@
+
+@import "generic/reset";
+
+@import "settings/colors";
+@import "settings/fonts";
+@import "settings/mixins";
+
 @import "elements/base";
 @import "elements/benefits-section";
 @import "elements/contact-section";
@@ -7,11 +14,8 @@
 @import "elements/prices-section";
 @import "elements/statistic-section";
 
-@import "generic/reset";
 
-@import "settings/colors";
-@import "settings/fonts";
-@import "settings/mixins";
+
 
 
 

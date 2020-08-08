@@ -6,18 +6,18 @@
     padding-bottom: 105px;
     width: 1130px;
   }
-}
 
-&__box {
-  height: 370px;
-  background-color: $c-white;
-  display: flex;
-  justify-content: space-between;
-  border-radius: 5px;
-  margin-bottom: 40px;
+  &__box {
+    height: 370px;
+    background-color: $c-white;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5px;
+    margin-bottom: 40px;
 
-  &--left {
-    flex-direction: row-reverse;
+    &--left {
+      flex-direction: row-reverse;
+    }
   }
 }
 

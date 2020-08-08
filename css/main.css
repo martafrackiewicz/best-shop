@@ -764,8 +764,8 @@ body {
   display: none;
 }
 .page-menu__burger span {
-  width: 35px;
-  height: 5px;
+  width: 25px;
+  height: 3px;
   background-color: #08a6e4;
   margin: 2px;
   margin-right: 20px;

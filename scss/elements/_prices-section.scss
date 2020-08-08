@@ -3,7 +3,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 1300px;
+    max-width: 1300px;
   }
 
   &-title {
@@ -15,8 +15,9 @@
   }
 
   &__price-box {
-    width: 370px;
+    width: 340px;
     /*height: 460px;*/
+    margin: 0 10px;
     border-radius: 18px;
     display: flex;
     flex-direction: column;
@@ -161,3 +162,25 @@
   }
 }
 
+@media (max-width: 760px) {
+  .prices-section-container {
+    flex-direction: column;
+  }
+
+  .prices-section__price-box {
+    margin-bottom: 55px;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .prices-section-title {
+    margin-bottom: 0;
+  }
+
+  .price-box__list {
+    margin: 25px 0;
+  }
+
+
+}

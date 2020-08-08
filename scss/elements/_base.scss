@@ -12,7 +12,10 @@ body {
   margin: 0 auto;
   padding: 0 15px;
 
-  @include notebook {
+}
+
+@media (max-width: 1352px) {
+  .container {
     width: 100%;
   }
 }

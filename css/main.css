@@ -613,11 +613,11 @@ body {
 }
 
 .open-section {
-  height: 712px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 130px;
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
 .open-section__title {
   font-size: 49px;
@@ -853,6 +853,7 @@ body {
   font-family: "Raleway", sans-serif;
   font-size: 36px;
   text-align: center;
+  margin-top: 10px;
 }
 .statistics-section__row {
   display: flex;

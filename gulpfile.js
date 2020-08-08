@@ -44,6 +44,7 @@ function makeCss() {
 function watch(cb) {
     gulp.watch("./scss/**/*.scss", gulp.series(makeCss)); //obserwuj wszystkie pliki z rozsz scss w katalogu i podkatalogach scss, jak się coś zmieni to zrób zadanie
     gulp.watch("./*.html").on('change', browserSync.reload);
+    gulp.watch("./*.js").on('change', browserSync.reload);
     cb(); // każde zadanie które nie zwraca (return) trzeba zamknąć cb
 }
 

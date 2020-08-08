@@ -1,55 +1,67 @@
 .benefits-section {
-  background-color: var(--c-light-grey);
+  background-color: $c-light-grey;
+
+  &-container {
+    padding-top: 105px;
+    padding-bottom: 105px;
+    width: 1130px;
+  }
 }
-.benefits-section-container {
-  padding-top: 105px;
-  padding-bottom: 105px;
-  width: 1130px;
-}
-.benefits-section__box {
+
+&__box {
   height: 370px;
-  background-color: var(--c-white);
+  background-color: $c-white;
   display: flex;
   justify-content: space-between;
   border-radius: 5px;
   margin-bottom: 40px;
+
+  &--left {
+    flex-direction: row-reverse;
+  }
 }
-.benefits-section__box--left {
-  flex-direction: row-reverse;
-}
+
 .box-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 70px 35px;
 }
+
 .box-line {
   width: 330px;
   height: 4px;
+
+  &-redish {
+    background-color: $c-redish;
+  }
+
+  &-blue {
+    background-color: $c-primary;
+  }
+
+  &-green {
+    background-color: $c-green;
+  }
 }
-.box-line-redish {
-  background-color: var(--c-redish);
-}
-.box-line-blue {
-  background-color: var(--c-primary);
-}
-.box-line-green {
-  background-color: var(--c-green);
-}
+
 .box-title {
-  font-family: var(--font-secondary);
+  font-family: $font-secondary;
   font-size: 36px;
   padding-bottom: 30px;
   line-height: 1.15em;
 }
+
 .box-text {
   font-size: 16px;
   padding-bottom: 50px;
   line-height: 1.3em;
 }
-.box-img{
+
+.box-img {
   position: relative;
 }
+
 .box-picture {
   width: 430px;
   margin: 30px 70px;
@@ -58,19 +70,22 @@
   background-position: bottom;
   z-index: 100;
   position: relative;
+
+  &-first {
+    height: 300px;
+    background-image: url("../../assets/macbook.png");
+  }
+
+  &-second {
+    height: 330px;
+    background-image: url("../../assets/iphone.png");
+  }
 }
-.box-picture-first {
-  height: 300px;
-  background-image: url("../assets/macbook.png");
-}
-.box-picture-second {
-  height: 330px;
-  background-image: url("../assets/iphone.png");
-}
+
 .box-square {
   width: 180px;
   height: 180px;
-  background-color: var(--c-redish);
+  background-color: $c-redish;
   border-radius: 41px;
   position: absolute;
   top: 0;
@@ -78,10 +93,11 @@
   transform: translate(-25%, 25%) rotate(45deg);
   z-index: 2;
 }
+
 .box-circle {
   width: 320px;
   height: 320px;
-  background-color: var(--c-primary);
+  background-color: $c-primary;
   border-radius: 50%;
   position: absolute;
   top: 12px;
@@ -96,23 +112,28 @@
   height: 370px;
   margin-bottom: 0;
 }
+
 .benefits-section__box--double {
   width: 620px;
 }
-.box-first {}
+
+.box-first {
+}
+
 .box-second {
   width: 440px;
-  background-color: var(--c-green);
+  background-color: $c-green;
   border-radius: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.box-second-img {
-  width: 300px;
-  height: 200px;
-  background-image: url("../assets/trumpet.png");
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
+
+  &-img {
+    width: 300px;
+    height: 200px;
+    background-image: url("../../assets/trumpet.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
 }

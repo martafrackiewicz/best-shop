@@ -1,4 +1,4 @@
-$shadow: 0 3px 6px #00000029;
+$shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
 
 .page-header {
   height: 70px;
@@ -62,18 +62,14 @@ $shadow: 0 3px 6px #00000029;
     background: none;
     border: none;
     display: none;
+    margin-right: 20px;
 
     span {
       width: 25px;
       height: 3px;
       background-color: $c-primary;
       margin: 2px;
-      margin-right: 20px;
-    }
 
-    strong {
-      position: absolute;
-      left: 9999px;
     }
   }
 }
@@ -87,7 +83,7 @@ $shadow: 0 3px 6px #00000029;
   .open span:nth-of-type(1) {
     transform: rotate(45deg);
     position: absolute;
-    left: 0;
+    transition: 0.2s;
   }
 
   .open span:nth-of-type(2) {
@@ -97,12 +93,13 @@ $shadow: 0 3px 6px #00000029;
   .open span:nth-of-type(3) {
     transform: rotate(-45deg);
     position: absolute;
-    left: 0;
+    transition: 0.2s;
   }
 
 
   .page-menu__list {
     position: absolute;
+    //display: none;
     top: -200px;
     background-color: $c-white;
     box-shadow: $shadow;
@@ -110,7 +107,7 @@ $shadow: 0 3px 6px #00000029;
     justify-content: center;
     height: 176px;
     flex-grow: 1;
-    width: 100vw;
+    width: 100%;
 
     &-el {
       padding: 14px 24px;
@@ -132,8 +129,9 @@ $shadow: 0 3px 6px #00000029;
   }
 
   .show {
+    display: flex;
     top: 80px;
-    transition: 0.2s;
+    transition: 0.5s;
     left: 0;
   }
 

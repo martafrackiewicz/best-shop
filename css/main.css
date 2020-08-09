@@ -434,20 +434,10 @@ body {
   line-height: 1.3em;
 }
 
-.box-picture {
-  width: 430px;
-  margin: 30px 70px;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: bottom;
-}
-.box-picture-first {
-  height: 300px;
-  background-image: url("../../assets/macbook.png");
+.box-img {
   position: relative;
 }
-.box-picture-first::before {
-  content: "";
+.box-img .box-square {
   width: 180px;
   height: 180px;
   background-color: #FB3B64;
@@ -456,15 +446,8 @@ body {
   top: 0;
   right: 0;
   transform: translate(-25%, 25%) rotate(45deg);
-  z-index: 999;
 }
-.box-picture-second {
-  height: 330px;
-  background-image: url("../../assets/iphone.png");
-  position: relative;
-}
-.box-picture-second::before {
-  content: "";
+.box-img .box-circle {
   width: 320px;
   height: 320px;
   background-color: #08a6e4;
@@ -472,7 +455,27 @@ body {
   position: absolute;
   top: 12px;
   left: 0;
+}
+
+.box-picture {
+  width: 430px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom;
+  margin: 25px 60px;
+}
+.box-picture-first {
+  height: 300px;
+  background-image: url("../../assets/macbook.png");
+  position: relative;
   z-index: 999;
+}
+.box-picture-second {
+  height: 330px;
+  background-image: url("../../assets/iphone.png");
+  position: relative;
+  z-index: 999;
+  transform: translate(-15%, 0);
 }
 
 .container-box-double {
@@ -498,8 +501,8 @@ body {
   width: 300px;
   height: 200px;
   background-image: url("../../assets/trumpet.png");
-  background-position: center;
-  background-size: contain;
+  background-position: top;
+  background-size: auto 30vh;
   background-repeat: no-repeat;
 }
 
@@ -708,7 +711,7 @@ body {
 
 .page-header {
   height: 70px;
-  box-shadow: 0 3px 6px #00000029;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
 }
 .page-header-container {
   height: inherit;
@@ -762,17 +765,13 @@ body {
   background: none;
   border: none;
   display: none;
+  margin-right: 20px;
 }
 .page-menu__burger span {
   width: 25px;
   height: 3px;
   background-color: #08a6e4;
   margin: 2px;
-  margin-right: 20px;
-}
-.page-menu__burger strong {
-  position: absolute;
-  left: 9999px;
 }
 
 @media (max-width: 840px) {
@@ -799,9 +798,9 @@ body {
 
   .page-menu__list {
     position: absolute;
-    top: -200px;
+    display: none;
     background-color: #ffffff;
-    box-shadow: 0 3px 6px #00000029;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
     flex-direction: column;
     justify-content: center;
     height: 176px;
@@ -823,6 +822,7 @@ body {
   }
 
   .show {
+    display: flex;
     top: 80px;
     transition: 0.2s;
     left: 0;

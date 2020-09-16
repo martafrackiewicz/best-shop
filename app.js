@@ -45,13 +45,18 @@ function toggleDropdown() {
     $selectPackageDropdown.classList.toggle('open');
 }
 
+String.prototype.capitalize = function() {
+    return this.charAt(0).toUpperCase() + this.slice(1); //prototyp do stringa, wielka pierwsza litera
+}
 
 $packageInput.addEventListener('click', toggleDropdown); // otwieram dropdown
 
-let elements = Array.from($selectElements);gitk
+let elements = Array.from($selectElements);
 elements.forEach(function (element) {
     element.addEventListener('click', function() {
+        console.log('element', element)
         let option = this.dataset.value; //wyciągam którą opcję kliknięto
+        $selectPackageInput.innerText = this.dataset.value.capitalize();
         if (option === 'basic') {
             console.log('hurra');
         } else if (option === 'professional') {

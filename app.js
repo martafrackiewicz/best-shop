@@ -17,26 +17,27 @@ const $productsInput = $form.querySelector("#products");
 const $ordersInput = $form.querySelector("#orders");
 
 const $summary = document.querySelector(".calc__summary");
-// const $summaryList = $summary.querySelectorAll(".list__item");
 
 
 function displaySummaryValue(quantity, selector, price) {
     const $item = $summary.querySelector(selector);
     if (quantity >= 0 && quantity !== '') {
         const $itemCalc = $item.querySelector('.item__calc');
+        const $itemPrice = $item.querySelector('.item__price');
         $itemCalc.innerText = `${quantity} * $${price}`;
+        const result = (quantity * price).toFixed(2);
+        $itemPrice.innerText = `$${result}`;
         $item.classList.add('open');
     } else {
         $item.classList.remove('open');
     }
 }
 
-
 $productsInput.addEventListener('change', function(e) {
     displaySummaryValue(this.value, '[data-id=products]', 0.5)
 });
 $ordersInput.addEventListener('change', function(e) {
-    displaySummaryValue(e.target.value, '[data-id=orders]', 0.5)
+    displaySummaryValue(e.target.value, '[data-id=orders]', 0.8)
 });
 
 
@@ -53,20 +54,27 @@ function toggleDropdown() {
     $selectPackageDropdown.classList.toggle('open');
 }
 
+$packageInput.addEventListener('click', toggleDropdown); // otwieram dropdown
+
 String.prototype.capitalize = function() {
     return this.charAt(0).toUpperCase() + this.slice(1); //prototyp do stringa, wielka pierwsza litera
 }
-
-$packageInput.addEventListener('click', toggleDropdown); // otwieram dropdown
 
 function displayPackage() {
     const $item = $summary.querySelector('[data-id=package]');
     $item.classList.add('open');
     const $itemCalc = $item.querySelector('.item__calc');
+    const $itemPrice = $item.querySelector('.item__price');
     const option = this.dataset.value.capitalize();
     $selectPackageInput.innerText = option;
     $itemCalc.innerText = option;
-
+    if (option === 'Basic') {
+        $itemPrice.innerText = '$0';
+    } else if (option === 'Professional') {
+        $itemPrice.innerText = '$25';
+    } else {
+        $itemPrice.innerText = '$60';
+    }
 }
 
 let elements = Array.from($selectElements);
@@ -94,3 +102,4 @@ $terminalCheckbox.addEventListener('change', function() {
 
 const $totalItem = document.querySelector("#total-price");
 const $totalPrice = $totalItem.querySelector(".total__price")
+

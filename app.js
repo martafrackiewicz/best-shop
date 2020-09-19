@@ -1,3 +1,23 @@
+
+const productPrice = 1;
+const orderPrice = 1;
+const packagePrice = {
+    'basic': 0,
+    'professional': 25,
+    'premium': 60
+}
+const accountingPrice = 10;
+const terminalPrice = 10;
+
+
+let totalPrice = 0;
+let productsResult = 0;
+let ordersResult = 0;
+let packageResult = 0;
+let accountingResult = 0;
+let terminalResult = 0;
+
+
 //burger menu
 const $button = document.querySelector(".page-menu__burger");
 const $menu = document.querySelector(".page-menu__list");
@@ -11,6 +31,21 @@ $button.addEventListener("click", function () {
 
 const $form = document.querySelector(".calc__form");
 
+const $summaryTotal = document.querySelector(".summary__total");
+const $totalPrice = $summaryTotal.querySelector(".total__price");
+
+function openTotal() {
+    $totalPrice.innerText = '$0';
+    $summaryTotal.classList.add('open');
+}
+
+openTotal();
+
+function updateTotalPrice() {
+    totalPrice = productsResult + ordersResult + packageResult + accountingResult + terminalResult;
+    $totalPrice.innerText = `$${totalPrice}`;
+}
+
 //  products input, orders input
 
 const $productsInput = $form.querySelector("#products");
@@ -19,14 +54,17 @@ const $ordersInput = $form.querySelector("#orders");
 const $summary = document.querySelector(".calc__summary");
 
 
-function displaySummaryValue(quantity, selector, price) {
+function calcSummaryResult(quantity, price) {
+    return (quantity * price);
+}
+
+function displaySummaryResult(selector, result, quantity, price) {
     const $item = $summary.querySelector(selector);
     if (quantity >= 0 && quantity !== '') {
         const $itemCalc = $item.querySelector('.item__calc');
         const $itemPrice = $item.querySelector('.item__price');
         $itemCalc.innerText = `${quantity} * $${price}`;
-        const result = (quantity * price).toFixed(2);
-        $itemPrice.innerText = `$${result}`;
+        $itemPrice.innerText = `$${result.toFixed(2)}`;
         $item.classList.add('open');
     } else {
         $item.classList.remove('open');
@@ -34,10 +72,17 @@ function displaySummaryValue(quantity, selector, price) {
 }
 
 $productsInput.addEventListener('change', function(e) {
-    displaySummaryValue(this.value, '[data-id=products]', 0.5)
+    const result = calcSummaryResult(this.value, productPrice);
+    productsResult = result;
+    updateTotalPrice();
+    displaySummaryResult('[data-id=products]', result, this.value, productPrice);
 });
+
 $ordersInput.addEventListener('change', function(e) {
-    displaySummaryValue(e.target.value, '[data-id=orders]', 0.8)
+    const result = calcSummaryResult(this.value, orderPrice);
+    ordersResult = result;
+    updateTotalPrice();
+    displaySummaryResult( '[data-id=orders]', result, e.target.value,orderPrice);
 });
 
 
@@ -60,26 +105,24 @@ String.prototype.capitalize = function() {
     return this.charAt(0).toUpperCase() + this.slice(1); //prototyp do stringa, wielka pierwsza litera
 }
 
-function displayPackage() {
+function displayPackage(e) {
     const $item = $summary.querySelector('[data-id=package]');
     $item.classList.add('open');
     const $itemCalc = $item.querySelector('.item__calc');
     const $itemPrice = $item.querySelector('.item__price');
-    const option = this.dataset.value.capitalize();
+    const option = e.target.dataset.value.capitalize();
     $selectPackageInput.innerText = option;
     $itemCalc.innerText = option;
-    if (option === 'Basic') {
-        $itemPrice.innerText = '$0';
-    } else if (option === 'Professional') {
-        $itemPrice.innerText = '$25';
-    } else {
-        $itemPrice.innerText = '$60';
-    }
+    $itemPrice.innerText = `$${packagePrice[e.target.dataset.value]}`
 }
 
 let elements = Array.from($selectElements);
 elements.forEach(function (element) {
-    element.addEventListener('click', displayPackage)
+    element.addEventListener('click', function (e) {
+        displayPackage(e);
+        packageResult = packagePrice[this.dataset.value];
+        updateTotalPrice();
+    })
 })
 
 // checkboxes
@@ -90,16 +133,21 @@ const $terminalCheckbox =$form.querySelector("#terminal");
 $accountingCheckbox.addEventListener('change', function() {
     const $item = $summary.querySelector('[data-id=accounting]');
     $item.classList.toggle('open');
+    if (this.checked) {
+        accountingResult = accountingPrice;
+    } else {
+        accountingResult = 0;
+    }
+    updateTotalPrice();
 })
 
 $terminalCheckbox.addEventListener('change', function() {
     const $item = $summary.querySelector('[data-id=terminal]');
     $item.classList.toggle('open');
+    if (this.checked) {
+        terminalResult = terminalPrice;
+    } else {
+        terminalResult = 0;
+    }
+    updateTotalPrice();
 })
-
-
-// total
-
-const $totalItem = document.querySelector("#total-price");
-const $totalPrice = $totalItem.querySelector(".total__price")
-

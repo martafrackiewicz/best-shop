@@ -11,25 +11,33 @@ $button.addEventListener("click", function () {
 
 const $form = document.querySelector(".calc__form");
 
-const $summary = document.querySelector(".calc__summary");
-const $summaryList = $summary.querySelectorAll(".list__item");
-
-const $totalItem = document.querySelector("#total-price");
-const $totalPrice = $totalItem.querySelector(".total__price")
-
-
 //  products input, orders input
 
 const $productsInput = $form.querySelector("#products");
 const $ordersInput = $form.querySelector("#orders");
 
-function selectNumber() {
-    console.log(this.value);
-    return this.value;
+const $summary = document.querySelector(".calc__summary");
+// const $summaryList = $summary.querySelectorAll(".list__item");
+
+
+function displaySummaryValue(quantity, selector, price) {
+    const $item = $summary.querySelector(selector);
+    if (quantity >= 0 && quantity !== '') {
+        const $itemCalc = $item.querySelector('.item__calc');
+        $itemCalc.innerText = `${quantity} * $${price}`;
+        $item.classList.add('open');
+    } else {
+        $item.classList.remove('open');
+    }
 }
 
-$productsInput.addEventListener('change', selectNumber);
-$ordersInput.addEventListener('change', selectNumber);
+
+$productsInput.addEventListener('change', function(e) {
+    displaySummaryValue(this.value, '[data-id=products]', 0.5)
+});
+$ordersInput.addEventListener('change', function(e) {
+    displaySummaryValue(e.target.value, '[data-id=orders]', 0.5)
+});
 
 
 //select package dropdown
@@ -51,20 +59,19 @@ String.prototype.capitalize = function() {
 
 $packageInput.addEventListener('click', toggleDropdown); // otwieram dropdown
 
+function displayPackage() {
+    const $item = $summary.querySelector('[data-id=package]');
+    $item.classList.add('open');
+    const $itemCalc = $item.querySelector('.item__calc');
+    const option = this.dataset.value.capitalize();
+    $selectPackageInput.innerText = option;
+    $itemCalc.innerText = option;
+
+}
+
 let elements = Array.from($selectElements);
 elements.forEach(function (element) {
-    element.addEventListener('click', function() {
-        console.log('element', element)
-        let option = this.dataset.value; //wyciągam którą opcję kliknięto
-        $selectPackageInput.innerText = this.dataset.value.capitalize();
-        if (option === 'basic') {
-            console.log('hurra');
-        } else if (option === 'professional') {
-            console.log('hurra2');
-        } else {
-            console.log('hurra3');
-        }
-    })
+    element.addEventListener('click', displayPackage)
 })
 
 // checkboxes
@@ -73,13 +80,17 @@ const $accountingCheckbox =$form.querySelector("#accounting");
 const $terminalCheckbox =$form.querySelector("#terminal");
 
 $accountingCheckbox.addEventListener('change', function() {
-    if (this.checked) {
-        console.log('account checked');
-    }
+    const $item = $summary.querySelector('[data-id=accounting]');
+    $item.classList.toggle('open');
 })
 
 $terminalCheckbox.addEventListener('change', function() {
-    if (this.checked) {
-        console.log('terminal checked')
-    }
+    const $item = $summary.querySelector('[data-id=terminal]');
+    $item.classList.toggle('open');
 })
+
+
+// total
+
+const $totalItem = document.querySelector("#total-price");
+const $totalPrice = $totalItem.querySelector(".total__price")

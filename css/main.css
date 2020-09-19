@@ -660,7 +660,7 @@ body {
   margin-right: 20px;
 }
 .calc__input input, .calc__select .select__input {
-  color: #A5A5A5;
+  color: #707070;
   width: 100%;
   border-radius: 6px;
   border: 1px solid #08a6e4;

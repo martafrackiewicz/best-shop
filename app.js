@@ -6,7 +6,7 @@ const packagePrice = {
     'professional': 25,
     'premium': 60
 }
-const accountingPrice = 10;
+const accountingPrice = 20;
 const terminalPrice = 10;
 
 
@@ -34,6 +34,12 @@ const $form = document.querySelector(".calc__form");
 const $summaryTotal = document.querySelector(".summary__total");
 const $totalPrice = $summaryTotal.querySelector(".total__price");
 
+function setCurrency(number) {
+    return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(number);
+}
+
+//total
+
 function openTotal() {
     $totalPrice.innerText = '$0';
     $summaryTotal.classList.add('open');
@@ -43,7 +49,11 @@ openTotal();
 
 function updateTotalPrice() {
     totalPrice = productsResult + ordersResult + packageResult + accountingResult + terminalResult;
-    $totalPrice.innerText = `$${totalPrice}`;
+    $totalPrice.innerText = setCurrency(totalPrice);
+}
+
+String.prototype.capitalize = function() {
+    return this.charAt(0).toUpperCase() + this.slice(1); //prototyp do stringa, wielka pierwsza litera
 }
 
 //  products input, orders input
@@ -63,8 +73,8 @@ function displaySummaryResult(selector, result, quantity, price) {
     if (quantity >= 0 && quantity !== '') {
         const $itemCalc = $item.querySelector('.item__calc');
         const $itemPrice = $item.querySelector('.item__price');
-        $itemCalc.innerText = `${quantity} * $${price}`;
-        $itemPrice.innerText = `$${result.toFixed(2)}`;
+        $itemCalc.innerText = `${quantity} * ${setCurrency(price)}`;
+        $itemPrice.innerText = setCurrency(result);
         $item.classList.add('open');
     } else {
         $item.classList.remove('open');
@@ -101,10 +111,6 @@ function toggleDropdown() {
 
 $packageInput.addEventListener('click', toggleDropdown); // otwieram dropdown
 
-String.prototype.capitalize = function() {
-    return this.charAt(0).toUpperCase() + this.slice(1); //prototyp do stringa, wielka pierwsza litera
-}
-
 function displayPackage(e) {
     const $item = $summary.querySelector('[data-id=package]');
     $item.classList.add('open');
@@ -113,7 +119,7 @@ function displayPackage(e) {
     const option = e.target.dataset.value.capitalize();
     $selectPackageInput.innerText = option;
     $itemCalc.innerText = option;
-    $itemPrice.innerText = `$${packagePrice[e.target.dataset.value]}`
+    $itemPrice.innerText = setCurrency(packagePrice[e.target.dataset.value]);
 }
 
 let elements = Array.from($selectElements);
@@ -132,6 +138,8 @@ const $terminalCheckbox =$form.querySelector("#terminal");
 
 $accountingCheckbox.addEventListener('change', function() {
     const $item = $summary.querySelector('[data-id=accounting]');
+    const $itemPrice = $item.querySelector('.item__price');
+    $itemPrice.innerText = setCurrency(accountingPrice);
     $item.classList.toggle('open');
     if (this.checked) {
         accountingResult = accountingPrice;
@@ -143,6 +151,8 @@ $accountingCheckbox.addEventListener('change', function() {
 
 $terminalCheckbox.addEventListener('change', function() {
     const $item = $summary.querySelector('[data-id=terminal]');
+    const $itemPrice = $item.querySelector('.item__price');
+    $itemPrice.innerText = setCurrency(terminalPrice);
     $item.classList.toggle('open');
     if (this.checked) {
         terminalResult = terminalPrice;

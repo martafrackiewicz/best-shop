@@ -761,6 +761,7 @@ body {
   margin-left: 20px;
   display: flex;
   flex-direction: column;
+  border: 1px solid red;
 }
 .calc__summary .summary__total,
 .calc__summary .list__item {
@@ -779,7 +780,7 @@ body {
 .calc__summary .summary__total {
   width: 50%;
   align-self: flex-end;
-  margin-top: 22px;
+  margin-top: auto;
   padding: 8px 20px;
   background-color: #08a6e4;
 }

@@ -153,6 +153,7 @@
     margin-left: 20px;
     display: flex;
     flex-direction: column;
+    border: 1px solid red;
 
     //@include tablet {
     //  width: 100%;
@@ -178,7 +179,7 @@
     .summary__total {
       width: 50%;
       align-self: flex-end;
-      margin-top: 22px;
+      margin-top: auto; //22px;
       padding: 8px 20px;
       background-color: $c-primary;
 

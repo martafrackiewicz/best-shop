@@ -2,9 +2,9 @@
 const productPrice = 1;
 const orderPrice = 1;
 const packagePrice = {
-    'basic': 0,
-    'professional': 25,
-    'premium': 60
+    basic: 0,
+    professional: 25,
+    premium: 60
 }
 const accountingPrice = 20;
 const terminalPrice = 10;
@@ -38,10 +38,14 @@ function setCurrency(number) {
     return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(number);
 }
 
+String.prototype.capitalize = function() {
+    return this.charAt(0).toUpperCase() + this.slice(1); //prototyp do stringa, wielka pierwsza litera
+}
+
 //total
 
 function openTotal() {
-    $totalPrice.innerText = '$0';
+    $totalPrice.innerText = setCurrency(0);
     $summaryTotal.classList.add('open');
 }
 
@@ -52,9 +56,6 @@ function updateTotalPrice() {
     $totalPrice.innerText = setCurrency(totalPrice);
 }
 
-String.prototype.capitalize = function() {
-    return this.charAt(0).toUpperCase() + this.slice(1); //prototyp do stringa, wielka pierwsza litera
-}
 
 //  products input, orders input
 
@@ -88,13 +89,14 @@ $productsInput.addEventListener('change', function(e) {
     displaySummaryResult('[data-id=products]', result, this.value, productPrice);
 });
 
+
 $ordersInput.addEventListener('change', function(e) {
     const result = calcSummaryResult(this.value, orderPrice);
     ordersResult = result;
     updateTotalPrice();
-    displaySummaryResult( '[data-id=orders]', result, e.target.value,orderPrice);
+    const input = e.target; // bez zmiennej podkreśla value
+    displaySummaryResult( '[data-id=orders]', result, input.value, orderPrice);
 });
-
 
 //select package dropdown
 
@@ -111,21 +113,21 @@ function toggleDropdown() {
 
 $packageInput.addEventListener('click', toggleDropdown); // otwieram dropdown
 
-function displayPackage(e) {
+function displayPackage() {
     const $item = $summary.querySelector('[data-id=package]');
     $item.classList.add('open');
     const $itemCalc = $item.querySelector('.item__calc');
     const $itemPrice = $item.querySelector('.item__price');
-    const option = e.target.dataset.value.capitalize();
+    const option = this.dataset.value.capitalize();
     $selectPackageInput.innerText = option;
     $itemCalc.innerText = option;
-    $itemPrice.innerText = setCurrency(packagePrice[e.target.dataset.value]);
+    $itemPrice.innerText = setCurrency(packagePrice[this.dataset.value]);
 }
 
 let elements = Array.from($selectElements);
 elements.forEach(function (element) {
-    element.addEventListener('click', function (e) {
-        displayPackage(e);
+    element.addEventListener('click', function () {
+        displayPackage.bind(this)();
         packageResult = packagePrice[this.dataset.value];
         updateTotalPrice();
     })
@@ -161,3 +163,4 @@ $terminalCheckbox.addEventListener('change', function() {
     }
     updateTotalPrice();
 })
+

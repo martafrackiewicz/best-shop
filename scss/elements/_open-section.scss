@@ -1,13 +1,13 @@
 .open-section {
-
+  height: calc(100vh - 70px);
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 100px;
-  margin-bottom: 100px;
+  padding-top: 70px;
   background-image: url("../assets/background.png");
   background-position: center bottom;
   background-repeat: no-repeat;
+  background-size: auto 60vh;
 
 
   &__title {
@@ -38,13 +38,6 @@
   }
 
 }
-
-@media (max-width: 855px) {
-  .open-section {
-    background-size: auto 30vh;
-  }
-}
-
 
 @media (max-width: 720px) {
   .open-section {

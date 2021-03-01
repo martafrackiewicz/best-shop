@@ -15,15 +15,21 @@
   }
 
   &__box {
-    height: 370px;
+    min-height: 370px;
     background-color: $c-white;
     display: flex;
     justify-content: space-between;
     border-radius: 5px;
     margin-bottom: 40px;
+    @media (max-width: 690px) {
+      flex-direction: column-reverse;
+    }
 
     &--left {
       flex-direction: row-reverse;
+      @media (max-width: 690px) {
+        flex-direction: column-reverse;
+      }
     }
   }
 }
@@ -32,12 +38,16 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 70px 35px;
+  padding: 0 35px;
+  min-width: 50%;
 }
 
 .box-line {
-  width: 330px;
+  width: 70%;
   height: 4px;
+  @media (max-width: 690px) {
+      display: none;
+    }
 
   &-redish {
     background-color: $c-redish;
@@ -57,17 +67,20 @@
   font-size: 36px;
   padding-bottom: 30px;
   line-height: 1.15em;
+  @media (max-width: 690px) {
+      padding-top: 20px;
+  }
 }
 
 .box-text {
   font-size: 16px;
-  padding-bottom: 50px;
+  padding-bottom: 30px;
   line-height: 1.3em;
 }
 
 .box-img {
   position: relative;
-
+  min-width: 50%;
 
   .box-square {
     width: 180px;
@@ -77,7 +90,12 @@
     position: absolute;
     top: 0;
     right: 0;
-    transform: translate(-25%, 25%) rotate(45deg);
+    transform: translate(-30%, 20%) rotate(45deg);
+    @media (max-width: 690px) {
+      width: 100px;
+      height: 100px;
+      transform: translate(-70%, 20%) rotate(45deg);
+    }
   }
 
   .box-circle {
@@ -87,7 +105,13 @@
     border-radius: 50%;
     position: absolute;
     top: 12px;
-    left: 0;
+    left: 15px;
+    @media (max-width: 690px) {
+      width: 140px;
+      height: 140px;
+      top: 5%;
+      left: 30%;
+    }
   }
 }
 
@@ -96,14 +120,19 @@
   background-repeat: no-repeat;
   background-size: contain;
   background-position: bottom;
-  margin: 25px 60px;
-
 
   &-first {
     height: 300px;
     background-image: url("../assets/macbook.png");
     position: relative;
     z-index: 999;
+    @media (max-width: 780px) {
+      transform: translate(-30px, 10px);
+    }
+    @media (max-width: 690px) {
+      height: 120px;
+      transform: translate(0, 35px);
+    }
   }
 
   &-second {
@@ -111,19 +140,28 @@
     background-image: url("../assets/iphone.png");
     position: relative;
     z-index: 999;
-    transform: translate(-15%, 0);
+    transform: translate(0, 10%);
+    @media (max-width: 780px) {
+      height: 310px;
+    }
+    @media (max-width: 690px) {
+      height: 150px;
+    }
   }
 }
 
 .container-box-double {
   display: flex;
   justify-content: space-between;
-  height: 370px;
   margin-bottom: 0;
+  @media (max-width: 690px) {
+      flex-direction: column;
+    }
 }
 
 .benefits-section__box--double {
-  width: 620px;
+  max-width: 620px;
+  min-height: 300px;
 }
 
 .box-second {
@@ -133,13 +171,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  @media (max-width: 690px) {
+      width: 100%;
+    }
 
   &-img {
     width: 300px;
     height: 200px;
     background-image: url("../assets/trumpet.png");
     background-position: top;
-    background-size: auto 30vh;
+    background-size: auto 20vh;
     background-repeat: no-repeat;
   }
 }

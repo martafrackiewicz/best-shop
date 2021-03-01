@@ -3,15 +3,17 @@
 }
 
 .calc {
-  padding: 80px 0;
+  padding: 120px 0;
   background-color: $c-light-grey;
 
   //@include tablet {
   //  padding: 30px 15px;
   //}
 
-  h2 {
+  &__title {
     text-align: center;
+    font-size: 36px;
+    font-family: $font-secondary;
   }
 
   &__columns {

@@ -162,7 +162,7 @@
   }
 }
 
-@media (max-width: 760px) {
+@media (max-width: 768px) {
   .prices-section-container {
     flex-direction: column;
   }
@@ -176,6 +176,7 @@
 
   .prices-section-title {
     margin-bottom: 0;
+    padding-top: 50px;
   }
 
   .price-box__list {

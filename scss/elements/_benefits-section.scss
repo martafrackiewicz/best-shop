@@ -1,11 +1,17 @@
 .benefits-section {
   background-color: $c-light-grey;
   padding-top: 70px;
+  @media (max-width: 780px) {
+    padding-top: 40px;
+  }
 
   &-container {
     padding-top: 30px;
     padding-bottom: 105px;
     max-width: 1130px;
+    @media (max-width: 780px) {
+      padding-bottom: 70px;
+    }
   }
 
   &__box {

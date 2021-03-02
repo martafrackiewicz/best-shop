@@ -691,7 +691,7 @@ body {
   cursor: pointer;
 }
 .form-checkbox__input:checked {
-  background-image: url("../../assets/checkmark.svg");
+  background-image: url("../assets/checkmark.svg");
   background-position: center;
   background-repeat: no-repeat;
 }
@@ -873,7 +873,7 @@ body {
   cursor: pointer;
 }
 .calc .form__checkbox #accounting:checked, .calc .form__checkbox #terminal:checked {
-  background-image: url("../../assets/checkmark.svg");
+  background-image: url("../assets/checkmark.svg");
   background-position: center;
   background-repeat: no-repeat;
 }
@@ -1219,7 +1219,7 @@ body {
 }
 .price-box__list-el::before {
   content: "";
-  background-image: url("../../assets/checkmark-2.svg");
+  background-image: url("../assets/checkmark-2.svg");
   background-repeat: no-repeat;
   background-size: contain;
   border-radius: 2px;
@@ -1230,7 +1230,7 @@ body {
 }
 .price-box__list-el--not::before {
   content: "";
-  background-image: url("../../assets/close.svg");
+  background-image: url("../assets/close.svg");
   background-repeat: no-repeat;
   background-size: contain;
   border-radius: 2px;

@@ -72,7 +72,7 @@
 
       &::before {
         content: '';
-        background-image: url("../../assets/checkmark-2.svg");
+        background-image: url("../assets/checkmark-2.svg");
         background-repeat: no-repeat;
         background-size: contain;
         border-radius: 2px;
@@ -85,7 +85,7 @@
       &--not {
         &::before {
           content: '';
-          background-image: url("../../assets/close.svg");
+          background-image: url("../assets/close.svg");
           background-repeat: no-repeat;
           background-size: contain;
           border-radius: 2px;

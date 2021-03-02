@@ -81,17 +81,17 @@ $shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
     position: relative;
   }
 
-  .open span:nth-of-type(1) {
+  .open_menu span:nth-of-type(1) {
     transform: rotate(45deg);
     position: absolute;
     transition: 0.2s;
   }
 
-  .open span:nth-of-type(2) {
+  .open_menu span:nth-of-type(2) {
     opacity: 0;
   }
 
-  .open span:nth-of-type(3) {
+  .open_menu span:nth-of-type(3) {
     transform: rotate(-45deg);
     position: absolute;
     transition: 0.2s;
@@ -129,7 +129,7 @@ $shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
     }
   }
 
-  .show {
+  .show_menu {
     display: flex;
     top: 80px;
     transition: 0.5s;

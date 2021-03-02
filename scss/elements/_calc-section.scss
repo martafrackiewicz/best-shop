@@ -6,10 +6,6 @@
   padding: 120px 0;
   background-color: $c-light-grey;
 
-  //@include tablet {
-  //  padding: 30px 15px;
-  //}
-
   &__title {
     text-align: center;
     font-size: 36px;
@@ -20,20 +16,22 @@
     max-width: 865px;
     margin: 50px auto 0;
     display: flex;
-
-    //@include tablet {
-    //  display: block;
-    //}
+    @media (max-width: 780px) {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__form {
     width: 50%;
     margin-right: 20px;
-
-    //@include tablet {
-    //  width: 100%;
-    //  margin-right: 0;
-    //}
+    @media (max-width: 780px) {
+      margin-right: 0;
+      width: 70%;
+    }
+    @media (max-width: 426px) {
+      width: 90%;
+    }
   }
 
 
@@ -155,12 +153,13 @@
     margin-left: 20px;
     display: flex;
     flex-direction: column;
-
-    //@include tablet {
-    //  width: 100%;
-    //  margin-left: 0;
-    //  margin-top: 30px;
-    //}
+    @media (max-width: 780px) {
+      margin-left: 0;
+      width: 70%;
+    }
+    @media (max-width: 426px) {
+      width: 90%;
+    }
 
     .summary__total,
     .list__item {
@@ -171,6 +170,9 @@
       color: $c-white;
       font-size: 0.875rem;
       display: none;
+      @media (max-width: 320px) {
+        font-size: 0.75rem;
+      }
 
       &.open {
         display: flex;
@@ -178,7 +180,7 @@
     }
 
     .summary__total {
-      width: 50%;
+      min-width: 50%;
       align-self: flex-end;
       margin-top: auto; //22px;
       padding: 8px 20px;
@@ -187,18 +189,25 @@
       .total__price {
         font-size: 1.25rem;
         font-weight: 700;
+        margin-left: 20px;
+        @media (max-width: 320px) {
+            font-size: 0.875rem;
+          }
       }
     }
 
     .list__item {
       padding: 6px 20px;
       background-color: $c-green;
-      margin-bottom: 8px;
+      margin-bottom: 12px;
 
       .item {
         &__price {
           font-weight: 700;
           font-size: 1.125rem;
+          @media (max-width: 320px) {
+            font-size: 0.875rem;
+          }
         }
       }
     }

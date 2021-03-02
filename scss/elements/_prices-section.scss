@@ -24,6 +24,12 @@
     justify-content: center;
     align-items: center;
     position: relative;
+    @media (max-width: 426px) {
+      width: 300px;
+    }
+    @media (max-width: 320px) {
+      width: 270px;
+    }
   }
 }
 
@@ -151,6 +157,12 @@
     width: 400px;
     /*height: 500px;*/
     box-shadow: 5px 10px 27px #07ACE629;
+    @media (max-width: 426px) {
+      width: 350px;
+    }
+    @media (max-width: 320px) {
+      width: 300px;
+    }
 
     .price-box__title {
       font-size: 21px;

@@ -164,3 +164,23 @@ $terminalCheckbox.addEventListener('change', function() {
     updateTotalPrice();
 })
 
+//return to top arrow
+const $returnToTop = document.querySelector(".return-to-top");
+
+const scrollFunc = () => {
+    let y = window.scrollY;
+    console.log(y)
+    if (y > 3200) {
+        $returnToTop.classList.remove("hide");
+        $returnToTop.classList.add("show");
+    } else {
+        $returnToTop.classList.remove("show");
+        $returnToTop.classList.add("hide");
+    }
+};
+
+window.addEventListener("scroll", scrollFunc);
+
+$returnToTop.addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+})

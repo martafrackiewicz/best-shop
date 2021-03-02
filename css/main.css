@@ -1215,8 +1215,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 100px;
-  margin-bottom: 40px;
+  padding-top: 40px;
+  margin-bottom: 20px;
 }
 .prices-section__price-box {
   width: 340px;
